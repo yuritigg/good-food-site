@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Good Food - Pizzaria e Restaurante em Teutônia/RS. Rodízio de pizzas artesanais, buffet completo e ambiente familiar.">
+<meta name="description" content="Good Food - Pizzaria e Restaurante em Teutônia/RS. Rodízio de pizzas, buffet completo e cardápio variado.">
 <title>Good Food · Pizzaria &amp; Restaurante · Teutônia/RS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -346,23 +346,6 @@ ul { list-style: none; }
 @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
 /* ======================================================
-   STATS
-====================================================== */
-.stats { padding: 5rem 0; background: linear-gradient(180deg,var(--darker) 0%,var(--dark) 100%); }
-.stats-grid {
-  display: grid; grid-template-columns: repeat(2,1fr); gap: 2rem;
-}
-@media (min-width:640px) { .stats-grid { grid-template-columns: repeat(4,1fr); } }
-.stat { text-align: center; }
-.stat__num {
-  font-family: var(--serif);
-  font-size: clamp(2.5rem,6vw,4rem);
-  font-weight: 600; color: var(--gold);
-  line-height: 1; margin-bottom: 0.5rem;
-}
-.stat__lbl { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.04em; }
-
-/* ======================================================
    SECTION HEADER (shared)
 ====================================================== */
 .sec-head { text-align: center; margin-bottom: 4rem; }
@@ -401,11 +384,11 @@ ul { list-style: none; }
 .galeria { padding: 8rem 0; background: var(--darker); }
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 0.6rem;
   grid-auto-flow: dense;
 }
-@media (min-width:768px) { .gallery-grid { grid-template-columns: repeat(3,1fr); } }
+@media (max-width:640px) { .gallery-grid { grid-template-columns: 1fr; } }
 
 .g-item {
   position: relative; overflow: hidden;
@@ -609,7 +592,7 @@ ul { list-style: none; }
   <a href="#cardapio" onclick="closeMenu()">Cardápio</a>
   <a href="#horarios" onclick="closeMenu()">Horários</a>
   <a href="#contato"  onclick="closeMenu()">Contato</a>
-  <a href="https://wa.me/5551999999999" target="_blank" rel="noopener" class="btn btn-primary" onclick="closeMenu()">Reservar Mesa</a>
+  <a href="https://wa.me/5551999999999" target="_blank" rel="noopener" class="btn btn-primary" onclick="closeMenu()">Pedir Agora</a>
 </div>
 
 <!-- ============ NAVBAR ============ -->
@@ -625,7 +608,7 @@ ul { list-style: none; }
       <a href="#horarios" class="nav-link">Horários</a>
       <a href="#contato"  class="nav-link">Contato</a>
     </div>
-    <a href="https://wa.me/5551999999999" target="_blank" rel="noopener" class="btn btn-primary btn-sm nav-cta">Reservar Mesa</a>
+    <a href="https://wa.me/5551999999999" target="_blank" rel="noopener" class="btn btn-primary btn-sm nav-cta">Pedir Agora</a>
     <button class="ham" id="ham" aria-label="Menu" aria-expanded="false" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </button>
@@ -637,7 +620,7 @@ ul { list-style: none; }
   <div class="hero__bg" id="heroBg">
     <img
       src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1920&q=85&fit=crop&auto=format"
-      alt="Pizza artesanal Good Food"
+      alt="Pizza Good Food"
       loading="eager" fetchpriority="high"
     >
   </div>
@@ -646,10 +629,10 @@ ul { list-style: none; }
     <span class="hero__eyebrow">Teutônia/RS — Sabor &amp; Tradição</span>
     <h1 class="hero__title">Good <em>Food</em></h1>
     <p class="hero__sub">Pizzaria &amp; Restaurante · Teutônia/RS</p>
-    <p class="hero__call">Rodízio de pizzas · Buffet · Ambiente familiar</p>
+    <p class="hero__call">Rodízio de pizzas · Buffet</p>
     <div class="hero__btns">
       <a href="#cardapio" class="btn btn-primary">Ver Cardápio</a>
-      <a href="https://wa.me/5551999999999" target="_blank" rel="noopener" class="btn btn-ghost">Reservar Mesa</a>
+      <a href="https://wa.me/5551999999999" target="_blank" rel="noopener" class="btn btn-ghost">Pedir Agora</a>
     </div>
   </div>
   <div class="hero__scroll">
@@ -661,46 +644,16 @@ ul { list-style: none; }
 <!-- ============ MARQUEE ============ -->
 <div class="marquee-strip" aria-hidden="true">
   <div class="marquee-track">
-    <div class="marquee-item">Pizzas Artesanais<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Pizzas<span class="marquee-dot"></span></div>
     <div class="marquee-item">Rodízio Ilimitado<span class="marquee-dot"></span></div>
     <div class="marquee-item">Buffet Completo<span class="marquee-dot"></span></div>
-    <div class="marquee-item">Filés Selecionados<span class="marquee-dot"></span></div>
-    <div class="marquee-item">Ambiente Familiar<span class="marquee-dot"></span></div>
-    <div class="marquee-item">Massas Artesanais<span class="marquee-dot"></span></div>
     <div class="marquee-item">Teutônia — RS<span class="marquee-dot"></span></div>
-    <div class="marquee-item">Pizzas Artesanais<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Pizzas<span class="marquee-dot"></span></div>
     <div class="marquee-item">Rodízio Ilimitado<span class="marquee-dot"></span></div>
     <div class="marquee-item">Buffet Completo<span class="marquee-dot"></span></div>
-    <div class="marquee-item">Filés Selecionados<span class="marquee-dot"></span></div>
-    <div class="marquee-item">Ambiente Familiar<span class="marquee-dot"></span></div>
-    <div class="marquee-item">Massas Artesanais<span class="marquee-dot"></span></div>
     <div class="marquee-item">Teutônia — RS<span class="marquee-dot"></span></div>
   </div>
 </div>
-
-<!-- ============ STATS ============ -->
-<section class="stats">
-  <div class="wrap">
-    <div class="stats-grid">
-      <div class="stat" data-r="up">
-        <div class="stat__num" data-count="500" data-prefix="+">0</div>
-        <div class="stat__lbl">Clientes satisfeitos</div>
-      </div>
-      <div class="stat" data-r="up" style="transition-delay:.1s">
-        <div class="stat__num" data-count="30" data-suffix="+">0</div>
-        <div class="stat__lbl">Sabores de pizza</div>
-      </div>
-      <div class="stat" data-r="up" style="transition-delay:.2s">
-        <div class="stat__num" data-count="15">0</div>
-        <div class="stat__lbl">Anos de história</div>
-      </div>
-      <div class="stat" data-r="up" style="transition-delay:.3s">
-        <div class="stat__num" data-count="98" data-suffix="%">0</div>
-        <div class="stat__lbl">Avaliações positivas</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ============ DESTAQUES ============ -->
 <section class="destaques" id="destaques">
@@ -709,7 +662,6 @@ ul { list-style: none; }
       <span class="eyebrow" data-r="up">O que nos torna especiais</span>
       <div class="divider divider--c"></div>
       <h2 class="section-title" data-r="up" style="transition-delay:.1s">Uma experiência completa</h2>
-      <p class="body-copy" data-r="up" style="transition-delay:.2s">Do rodízio ao buffet, do sabor ao aconchego. Venha criar memórias com quem você ama.</p>
     </div>
     <div class="destaques-grid">
 
@@ -740,7 +692,7 @@ ul { list-style: none; }
           </svg>
         </div>
         <h3 class="dest-card__title">Buffet Completo</h3>
-        <p class="dest-card__text">Mesa farta de saladas frescas, massas artesanais e filés selecionados. Opções variadas para agradar todos os gostos.</p>
+        <p class="dest-card__text">Buffet de almoço completo</p>
       </div>
 
       <div class="dest-card" data-r="up" style="transition-delay:.3s">
@@ -767,7 +719,7 @@ ul { list-style: none; }
     <div class="sec-head">
       <span class="eyebrow" data-r="up">Nossa galeria</span>
       <div class="divider divider--c"></div>
-      <h2 class="section-title" data-r="up" style="transition-delay:.1s">Uma foto não faz jus ao sabor</h2>
+      <h2 class="section-title" data-r="up" style="transition-delay:.1s">Cada detalhe pensado para a sua experiência</h2>
     </div>
     <div class="gallery-grid">
       <div class="g-item" data-r="scale" style="transition-delay:.05s">
@@ -775,24 +727,12 @@ ul { list-style: none; }
         <div class="g-cap"><span>Direto do Forno</span></div>
       </div>
       <div class="g-item" data-r="scale" style="transition-delay:.1s">
-        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80&fit=crop&auto=format" alt="Pizza artesanal" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80&fit=crop&auto=format" alt="Pizza" loading="lazy">
         <div class="g-cap"><span>Sabores Únicos</span></div>
       </div>
       <div class="g-item" data-r="scale" style="transition-delay:.15s">
         <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80&fit=crop&auto=format" alt="Ambiente do restaurante" loading="lazy">
         <div class="g-cap"><span>Nosso Ambiente</span></div>
-      </div>
-      <div class="g-item" data-r="scale" style="transition-delay:.2s">
-        <img src="https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?w=800&q=80&fit=crop&auto=format" alt="Fatias de pizza" loading="lazy">
-        <div class="g-cap"><span>Fatias Generosas</span></div>
-      </div>
-      <div class="g-item" data-r="scale" style="transition-delay:.25s">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80&fit=crop&auto=format" alt="Jantar especial" loading="lazy">
-        <div class="g-cap"><span>Momentos Especiais</span></div>
-      </div>
-      <div class="g-item" data-r="scale" style="transition-delay:.3s">
-        <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=800&q=80&fit=crop&auto=format" alt="Pizza italiana" loading="lazy">
-        <div class="g-cap"><span>Tradição Italiana</span></div>
       </div>
     </div>
   </div>
@@ -809,15 +749,13 @@ ul { list-style: none; }
     </div>
 
     <div class="tab-row" data-r="up" style="transition-delay:.3s">
-      <button class="tab-btn on"  data-tab="sal">Pizzas Salgadas</button>
-      <button class="tab-btn"     data-tab="doc">Pizzas Doces</button>
-      <button class="tab-btn"     data-tab="fil">Filés</button>
-      <button class="tab-btn"     data-tab="buf">Saladas &amp; Massas</button>
+      <button class="tab-btn on" data-tab="sal">Pizzas Salgadas</button>
+      <button class="tab-btn"    data-tab="doc">Pizzas Doces</button>
     </div>
 
     <!-- Pizzas Salgadas -->
     <div class="tab-panel on" id="p-sal">
-      <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Margherita</div><div class="menu-card__desc">Molho de tomate artesanal, muçarela fior di latte, tomate fresco e manjericão fresco.</div></div>
+      <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Margherita</div><div class="menu-card__desc">Molho de tomate, muçarela fior di latte, tomate fresco e manjericão fresco.</div></div>
       <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Calabresa</div><div class="menu-card__desc">Calabresa defumada fatiada, cebola roxa caramelizada, azeitonas pretas e orégano.</div></div>
       <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Frango com Catupiry</div><div class="menu-card__desc">Frango desfiado temperado, catupiry original cremoso, milho e cheiro-verde.</div></div>
       <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Portuguesa</div><div class="menu-card__desc">Presunto, ovo, cebola, pimentão, azeitonas e muçarela gratinada.</div></div>
@@ -835,26 +773,7 @@ ul { list-style: none; }
       <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Banana Nevada</div><div class="menu-card__desc">Banana caramelizada, leite condensado, canela em pó e coco ralado tostado.</div></div>
       <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Nutella com Morango</div><div class="menu-card__desc">Generosa camada de Nutella, morangos frescos fatiados e açúcar de confeiteiro.</div></div>
       <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Prestígio</div><div class="menu-card__desc">Chocolate ao leite, coco ralado úmido, leite condensado e granulado crocante.</div></div>
-      <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Morango com Creme</div><div class="menu-card__desc">Creme de baunilha artesanal, morangos frescos e açúcar cristal levemente caramelizado.</div></div>
-    </div>
-
-    <!-- Filés -->
-    <div class="tab-panel" id="p-fil">
-      <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Filé ao Molho Madeira</div><div class="menu-card__desc">Medalhão de filé mignon grelhado ao ponto, coberto com molho madeira e champignon.</div></div>
-      <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Filé à Parmegiana</div><div class="menu-card__desc">Filé empanado crocante, molho de tomate e muçarela gratinada no forno.</div></div>
-      <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Frango Grelhado</div><div class="menu-card__desc">Peito de frango marinado em ervas frescas, grelhado com alho dourado no azeite.</div></div>
-      <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Filé ao Alho e Óleo</div><div class="menu-card__desc">Medalhão grelhado com azeite extra virgem, alho laminado tostado e salsinha.</div></div>
-      <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Picanha na Chapa</div><div class="menu-card__desc">Picanha selecionada selada na chapa, com sal grosso e vinagrete artesanal da casa.</div></div>
-    </div>
-
-    <!-- Saladas & Massas -->
-    <div class="tab-panel" id="p-buf">
-      <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Salada Caesar</div><div class="menu-card__desc">Alface romana, croutons artesanais, parmesão laminado e molho caesar da casa.</div></div>
-      <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Salada Caprese</div><div class="menu-card__desc">Tomate italiano, muçarela de búfala, manjericão fresco e redução de aceto balsâmico.</div></div>
-      <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Fettuccine Alfredo</div><div class="menu-card__desc">Massa fresca, molho cremoso de parmesão, manteiga e noz moscada ralada.</div></div>
-      <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Penne ao Pomodoro</div><div class="menu-card__desc">Molho de tomate san marzano, alho, azeite e manjericão sobre penne artesanal al dente.</div></div>
-      <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Rigatoni Bolonhesa</div><div class="menu-card__desc">Ragú de carne bovina cozido lentamente, ervas frescas e parmesão ralado na hora.</div></div>
-      <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Nhoque da Casa</div><div class="menu-card__desc">Nhoque de batata artesanal ao molho gorgonzola com nozes tostadas e parmesão.</div></div>
+      <div class="menu-card"><div class="menu-card__dot"></div><div class="menu-card__name">Morango com Creme</div><div class="menu-card__desc">Creme de baunilha, morangos frescos e açúcar cristal levemente caramelizado.</div></div>
     </div>
   </div>
 </section>
@@ -883,8 +802,8 @@ ul { list-style: none; }
         <div class="sobre-quote">
           <p>"Lugar muito bom, pizza saborosa, ótimo atendimento e um ambiente aconchegante. Voltarei com certeza!"</p>
         </div>
-        <p class="sobre-text">Nosso ambiente foi pensado para receber você com conforto: cadeirinhas para bebês, salão espaçoso e uma equipe que trata cada cliente como parte da família. Seja no almoço de semana ou no jantar especial de fim de semana.</p>
-        <a href="https://wa.me/5551999999999" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1.5rem">Fazer uma Reserva</a>
+        <p class="sobre-text">Nosso espaço foi pensado para receber você com conforto: cadeirinhas para bebês, salão espaçoso e uma equipe que trata cada cliente como parte da família. Seja no almoço de semana ou no jantar especial de fim de semana.</p>
+        <a href="https://wa.me/5551999999999" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1.5rem">Pedir Agora</a>
       </div>
     </div>
   </div>
@@ -919,12 +838,12 @@ ul { list-style: none; }
           <p class="price-card__range">valor varia conforme o dia</p>
           <ul class="price-card__list">
             <li>Rodízio ilimitado de pizzas</li>
-            <li>Buffet de saladas e massas</li>
+            <li>Buffet de saladas</li>
             <li>Sobremesas incluídas</li>
             <li>Bebida não inclusa</li>
             <li>Cadeirinha para bebês</li>
           </ul>
-          <a href="https://wa.me/5551999999999" target="_blank" rel="noopener" class="btn btn-ghost" style="width:100%;justify-content:center;color:#fff;border-color:rgba(255,255,255,0.28)">Reservar pelo WhatsApp</a>
+          <a href="https://wa.me/5551999999999" target="_blank" rel="noopener" class="btn btn-ghost" style="width:100%;justify-content:center;color:#fff;border-color:rgba(255,255,255,0.28)">Pedir pelo WhatsApp</a>
         </div>
       </div>
     </div>
@@ -961,17 +880,6 @@ ul { list-style: none; }
           <div>
             <p class="cont-item__lbl">Telefone</p>
             <p class="cont-item__val">(51) 9999-9999</p>
-          </div>
-        </div>
-        <div class="cont-item">
-          <div class="cont-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
-            </svg>
-          </div>
-          <div>
-            <p class="cont-item__lbl">Redes Sociais</p>
-            <p class="cont-item__val">@goodfoodteutonia</p>
           </div>
         </div>
         <div class="cont-actions">
@@ -1086,27 +994,6 @@ var ro = new IntersectionObserver(function(entries){
   });
 },{threshold:0.12, rootMargin:'0px 0px -36px 0px'});
 document.querySelectorAll('[data-r]').forEach(function(el){ ro.observe(el); });
-
-/* ── COUNTER ───────────────────────────────── */
-function runCounter(el){
-  var target=parseInt(el.dataset.count,10);
-  var pre=el.dataset.prefix||'', suf=el.dataset.suffix||'';
-  var dur=1800, t0=null;
-  (function tick(ts){
-    if(!t0)t0=ts;
-    var p=Math.min((ts-t0)/dur,1);
-    var e=1-Math.pow(1-p,4);
-    el.textContent=pre+Math.floor(e*target)+suf;
-    if(p<1)requestAnimationFrame(tick);
-    else el.textContent=pre+target+suf;
-  })(performance.now());
-}
-var co=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){ runCounter(e.target); co.unobserve(e.target); }
-  });
-},{threshold:0.6});
-document.querySelectorAll('.stat__num[data-count]').forEach(function(el){ co.observe(el); });
 
 /* ── TABS ──────────────────────────────────── */
 document.querySelectorAll('.tab-btn').forEach(function(btn){
