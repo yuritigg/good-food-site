@@ -961,7 +961,40 @@ ul { list-style: none; }
 /* ── HERO ENTRANCE ─────────────────────────── */
 window.addEventListener('load', function(){
   document.querySelector('.hero').classList.add('loaded');
+  setupMarquee();
 });
+
+/* ── MARQUEE FILL ──────────────────────────── */
+/*
+ * Root cause: translateX(-50%) only hides the gap when one item-set is
+ * wider than the viewport. With short text labels (~720 px per set) and
+ * a 1920 px viewport the animation ends at x=-720, leaving ~1200 px of
+ * blank space. Fix: clone until total width > 2× viewport, then drive
+ * the animation with a pixel offset instead of a fragile percentage.
+ */
+function setupMarquee(){
+  var track=document.querySelector('.marquee-track');
+  if(!track) return;
+  var originals=Array.from(track.children);
+  var n=originals.length;
+
+  /* clone the original set until the track is at least 2× the viewport */
+  while(track.scrollWidth < window.innerWidth*2+200){
+    originals.forEach(function(o){ track.appendChild(o.cloneNode(true)); });
+  }
+
+  /* measure the exact pixel width of one original set after layout */
+  var setW=0;
+  for(var i=0;i<n;i++){ setW+=originals[i].getBoundingClientRect().width; }
+
+  /* inject a pixel-exact @keyframe — overrides the %-based CSS fallback */
+  var s=document.createElement('style');
+  s.textContent='@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-'+Math.ceil(setW)+'px)}}';
+  document.head.appendChild(s);
+
+  /* update duration to keep the same visual tempo (~28 px/s) */
+  track.style.animationDuration=Math.round(setW/28)+'s';
+}
 
 /* ── NAVBAR ────────────────────────────────── */
 var navbar = document.getElementById('navbar');
