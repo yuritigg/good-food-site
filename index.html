@@ -1026,14 +1026,35 @@ document.querySelectorAll('.tab-btn').forEach(function(btn){
 });
 
 /* ── TODAY HIGHLIGHT ───────────────────────── */
-var today=new Date().getDay();
-document.querySelectorAll('#hoursTbl tr[data-day]').forEach(function(row){
-  if(parseInt(row.dataset.day,10)===today){
-    row.classList.add('today');
-    var cell=row.querySelector('td:first-child');
-    if(cell) cell.innerHTML+='​<span class="today-pill">hoje</span>';
-  }
-});
+function highlightToday(){
+  var today=new Date().getDay();
+  /* clear previous state before re-applying */
+  document.querySelectorAll('#hoursTbl tr[data-day]').forEach(function(row){
+    row.classList.remove('today');
+    var old=row.querySelector('.today-pill');
+    if(old) old.parentNode.removeChild(old);
+  });
+  /* apply to the matching row */
+  document.querySelectorAll('#hoursTbl tr[data-day]').forEach(function(row){
+    if(parseInt(row.dataset.day,10)===today){
+      row.classList.add('today');
+      var cell=row.querySelector('td:first-child');
+      if(cell){
+        var pill=document.createElement('span');
+        pill.className='today-pill';
+        pill.textContent='hoje';
+        cell.appendChild(pill);
+      }
+    }
+  });
+}
+highlightToday();
+/* re-run exactly at each local midnight so open tabs stay correct */
+(function scheduleNextMidnight(){
+  var now=new Date();
+  var ms=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1,0,0,0)-now;
+  setTimeout(function(){ highlightToday(); scheduleNextMidnight(); }, ms);
+}());
 
 /* ── GSAP ──────────────────────────────────── */
 if(typeof gsap!=='undefined' && typeof ScrollTrigger!=='undefined'){
